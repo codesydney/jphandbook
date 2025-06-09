@@ -1,5 +1,4 @@
-# jphandbook
-NSW Justice of the Peace Handbook
+#NSW Justice of the Peace Handbook
 
 
 # RAG System using LlamaIndex and LanceDB
