@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col">
+            <a href="/" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Back to search
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4><i class="bi bi-question-circle"></i> Your Question</h4>
+                </div>
+                <div class="card-body">
+                    <p class="lead">{{ question }}</p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4><i class="bi bi-chat-square-text"></i> Answer</h4>
+                </div>
+                <div class="card-body">
+                    <p>{{ answer }}</p>
+                    <div class="text-muted small">
+                        <i class="bi bi-clock"></i> Processed in {{ processing_time }} seconds
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4><i class="bi bi-file-text"></i> Source References</h4>
+                </div>
+                <div class="card-body">
+                    {% for source in sources %}
+                    <div class="card source-card mb-2">
+                        <div class="card-body">
+                            <p class="card-text">{{ source.text }}</p>
+                            <span class="badge bg-secondary">Relevance: {{ source.score }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
